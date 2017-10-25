@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import {Reserva} from '../../app/clases/reserva';
-import {Vuelo} from '../../app/clases/vuelo';
 
-import {VuelosPage} from '../vuelos/vuelos';
-import {ReservasPage} from '../reservas/reservas';
+//import {ReservasPage} from '../reservas/reservas';
 
 import {ListaReservasProvider} from '../../app/providers/lista-reservas/lista-reservas';
 
@@ -88,8 +86,8 @@ export class ReservarPage {
       this.correo = "";
       this.reservado = false;
 
-      this.navCtrl.push(ReservasPage);
-      //this.navCtrl.pop();
+      //this.navCtrl.push(ReservasPage);
+      this.navCtrl.pop();
     }
     else{
       let alert = this.alertCtrl.create({

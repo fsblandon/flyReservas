@@ -1,4 +1,3 @@
-import {Vuelo} from './vuelo';
 
 export class Reserva{
   reserva:string;
