@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reservas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+      <ion-label floating>Cedula</ion-label>
+      <ion-input type="number"
+                [(ngModel)]="cedula"
+                name="cedula">
+      </ion-input>
+    </ion-item><br>
+
+    <button ion-button (click)="consultar()" block>Consultar</button><br>
+
+    <ion-item *ngFor="let r of reservas">
+      <ion-card *ngIf="r.cedula == cedula">
+        <ion-card-header>
+          <h1>Reserva: {{r.reserva}}</h1>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <h2> <small>Cédula: {{r.cedula}}</small></h2>
+            <h2> <small>Nombre: {{r.nombre}}</small></h2>
+            <h2> <small>Apellido: {{r.apellido}}</small></h2>
+            <h2> <small>Edad: {{r.edad}}</small></h2>
+            <h2> <small>Correo: {{r.correo}}</small></h2>
+            <h2> <small>Ruta: </small></h2>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+</ion-content>

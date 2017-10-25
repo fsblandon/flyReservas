@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Vuelos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+  <ion-item *ngFor="let vuelo of vuelos;let i = index">
+
+      <!--<ion-thumbnail item-start>
+        <img src="assets/imgs/flight.png">
+      </ion-thumbnail>-->
+    <ion-item-divider>
+      <div class="item-container" item-start>
+        <h1><small>Vuelo: {{vuelo.numero}}</small></h1>
+        <h1><small>{{vuelo.fecha}}</small></h1>
+      </div>
+
+      <div class="item-container" item-end>
+        <h1><small>Precio: ${{vuelo.precio}}</small></h1>
+      </div>
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <div class="item-container" item-start>
+        <h2>Origen:</h2>
+        <h2><small>{{vuelo.origen}} <ion-icon name="plane"></ion-icon></small> </h2>
+        <h3><small>{{vuelo.horaInicio}}</small></h3>
+      </div>
+      <div class="item-container" item-end>
+        <h2>Destino:</h2>
+        <h2><small>{{vuelo.destino}} <ion-icon name="plane"></ion-icon></small> </h2>
+        <h3><small>{{vuelo.horaFin}}</small></h3>
+      </div>
+      <button ion-button item-end (click)="reservar(vuelo.reserva)" >Reservar</button>
+    </ion-item-divider>
+
+  </ion-item>
+</ion-list>
+</ion-content>
